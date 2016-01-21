@@ -120,8 +120,22 @@ var education = {
 	]
 };
 
-// TODO -- add biography object to webpage
-// TODO -- add education object to webpage
-// TODO -- add work object to webpage
-// TODO -- add projects object to webpage
+// Need to append <h1> in header to satisfy index.html if statements
+// format name and role for header
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+// prepend formatted name and role to header
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+// check if there are skills in the bio object
+if (bio.skills.length > 0){
+	// if there are, append 'skills' html to header (includes #skills)
+	$("#header").append(HTMLskillsStart);
+	// format skills, and append to #skills
+	for (skill in bio.skills) {
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#skills").append(formattedSkill);
+	}
+}
 
