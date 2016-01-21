@@ -152,6 +152,7 @@ if (bio.skills.length > 0){
 	}
 }
 
+// create a funtion to display work
 function displayWork(){
 	// Add jobs from work object
 	// for each job
@@ -174,7 +175,30 @@ function displayWork(){
 	}
 }
 
+// add 'internationalize' button
+$("#main").append(internationalizeButton);
+
+// add work content
 displayWork();
 
+// create a function to "internationalize" name
+function inName(){
+	namesArray = bio.name.split(" ");
+	namesArray[0] = namesArray[0][0].toUpperCase() + namesArray[0].slice(1).toLowerCase();
+	namesArray[1] = namesArray[1].toUpperCase();
+	return namesArray.join(" ");
+}
 
+
+// testing stuff ///////////////////////////
+function locationizer(work_obj) {
+    locations = [];
+    for (jobIndex in work_obj.jobs){
+        locations.push(work_obj.jobs[jobIndex].location);
+    }
+    return locations;
+}
+console.log(locationizer(work));
+
+console.log(inName("sebastian thrun"));
 
