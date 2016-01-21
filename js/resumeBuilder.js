@@ -28,14 +28,26 @@ var work = {
 				"title": "Engineering Aide",
 				"location": "Bremerton, Washington",
 				"dates": "Summers 2010, 2011, 2012",
-				"description": "Assist engineers"
+				"description": "Assist engineers blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \ "
 			},
 			{
 				"employer": "NASA",
 				"title": "Astronaut",
 				"location": "Outer Space",
 				"dates": "2020",
-				"description": "Save the world"
+				"description": "Save the world blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
+				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \ "
 			}
 		]
 };
@@ -120,6 +132,7 @@ var education = {
 	]
 };
 
+// Add name, role, and skills from bio object
 // Need to append <h1> in header to satisfy index.html if statements
 // format name and role for header
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -130,12 +143,34 @@ $("#header").prepend(formattedName);
 
 // check if there are skills in the bio object
 if (bio.skills.length > 0){
-	// if there are, append 'skills' html to header (includes #skills)
+	// if there are, append 'skills start' element to header (includes #skills)
 	$("#header").append(HTMLskillsStart);
-	// format skills, and append to #skills
+	// for each skill, format skill, and append to #skills
 	for (skill in bio.skills) {
 		formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 		$("#skills").append(formattedSkill);
 	}
 }
+
+// Add jobs from work object
+// for each job
+for (job in work.jobs){
+	// append 'work start' element to #workExperience
+	$("#workExperience").append(HTMLworkStart);
+	// format 'employer' and 'title' for '.work-entry'
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	// append to .work-entry
+	$(".work-entry:last").append(formattedEmployer + formattedTitle);
+	// format 'location', 'dates', 'description' for '.work-entry'
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	// append to .work-entry
+	$(".work-entry:last").append(formattedDates);
+	$(".work-entry:last").append(formattedLocation);
+	$(".work-entry:last").append(formattedDescription);
+}
+
+
 
