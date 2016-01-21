@@ -152,25 +152,29 @@ if (bio.skills.length > 0){
 	}
 }
 
-// Add jobs from work object
-// for each job
-for (job in work.jobs){
-	// append 'work start' element to #workExperience
-	$("#workExperience").append(HTMLworkStart);
-	// format 'employer' and 'title' for '.work-entry'
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	// append to .work-entry
-	$(".work-entry:last").append(formattedEmployer + formattedTitle);
-	// format 'location', 'dates', 'description' for '.work-entry'
-	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-	// append to .work-entry
-	$(".work-entry:last").append(formattedDates);
-	$(".work-entry:last").append(formattedLocation);
-	$(".work-entry:last").append(formattedDescription);
+function displayWork(){
+	// Add jobs from work object
+	// for each job
+	for (job in work.jobs){
+		// append 'work start' element to #workExperience
+		$("#workExperience").append(HTMLworkStart);
+		// format 'employer' and 'title' for '.work-entry'
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		// append to .work-entry
+		$(".work-entry:last").append(formattedEmployer + formattedTitle);
+		// format 'location', 'dates', 'description' for '.work-entry'
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		// append to .work-entry
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDescription);
+	}
 }
+
+displayWork();
 
 
 
