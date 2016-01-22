@@ -59,11 +59,43 @@ var projects = {
 			"title": "Portfolio",
 			"dates": "2016",
 			"description": "Personal portfolio site",
-			"images": [],
+			"images": ["http://placehold.it/350x250", "http://placekitten.com/350/300"],
 			"url": "https://github.com/DavidScales/portfolio"
+		},
+		{
+			"title": "ALU",
+			"dates": "2015",
+			"description": "Simulated Arithmetic Logic Unit built from logic gates",
+			"images": ["http://placehold.it/350x150", "http://placekitten.com/350/150"],
+			"url": "#"
 		}
 	]
 };
+
+// add display function to projects object
+projects.display = function() {
+	// for each project in projects object
+	for (projectIndex in this.projects) {
+		// append 'project start' element to #projects
+		$("#projects").append(HTMLprojectStart);
+		// format components
+		var formattedTitle = HTMLprojectTitle.replace("%data%", this.projects[projectIndex].title);
+		var formattedDates = HTMLprojectDates.replace("%data%", this.projects[projectIndex].dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", this.projects[projectIndex].description);
+		// append component to last '.project-entry'
+		$(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription);
+		// check for images, if present, format and append
+		if (this.projects[projectIndex].images.length > 0) {
+			for (imageIndex in this.projects[projectIndex].images) {
+					var formattedImage = HTMLprojectImage.replace("%data%", this.projects[projectIndex].images[imageIndex]);
+					$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+};
+
+// display projects
+projects.display();
 
 // create education object using object literal notation (JSON)
 var education = {
@@ -173,7 +205,7 @@ function displayWork(){
 		$(".work-entry:last").append(formattedLocation);
 		$(".work-entry:last").append(formattedDescription);
 	}
-}
+};
 
 // add 'internationalize' button
 $("#main").append(internationalizeButton);
@@ -189,7 +221,6 @@ function inName(){
 	return namesArray.join(" ");
 }
 
-
 // testing stuff ///////////////////////////
 function locationizer(work_obj) {
     locations = [];
@@ -198,7 +229,8 @@ function locationizer(work_obj) {
     }
     return locations;
 }
-console.log(locationizer(work));
 
-console.log(inName("sebastian thrun"));
+// console.log(locationizer(work));
+
+// console.log(inName("sebastian thrun"));
 
