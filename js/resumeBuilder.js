@@ -9,7 +9,7 @@
 var bio = {
 	"name": "David Scales",
 	"role": "Web Developer",
-	"contactInfo": {
+	"contacts": {
 		"mobile": "360-710-9905",
 		"email": "davidsscales@gmail.com",
 		"github": "DavidScales",
@@ -39,7 +39,7 @@ var work = {
 			{
 				"employer": "NASA",
 				"title": "Astronaut",
-				"location": "Outer Space",
+				"location": "Cleveland, Ohio",
 				"dates": "2020",
 				"description": "Save the world blah blah blah blah blah blah blah blah blah \
 				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
@@ -220,6 +220,9 @@ function inName(){
 	namesArray[1] = namesArray[1].toUpperCase();
 	return namesArray.join(" ");
 }
+
+// add map
+$("#mapDiv").append(googleMap);
 
 // testing stuff ///////////////////////////
 function locationizer(work_obj) {
