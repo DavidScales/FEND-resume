@@ -38,15 +38,19 @@ bio.display = function() {
 	// format and append mobile
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").append(formattedMobile);
-	// format and append mobile
+	$("#footerContacts").append(formattedMobile);
+	// format and append email
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	$("#topContacts").append(formattedEmail);
-	// format and append mobile
+	$("#footerContacts").append(formattedEmail);
+	// format and append github
 	var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
 	$("#topContacts").append(formattedGitHub);
-	// format and append mobile
+	$("#footerContacts").append(formattedGitHub);
+	// format and append location
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	$("#topContacts").append(formattedLocation);
+	$("#footerContacts").append(formattedLocation);
 
 	// format and append bioPic
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
