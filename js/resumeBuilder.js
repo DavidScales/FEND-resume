@@ -1,6 +1,7 @@
 /*
 
-Stores JSON data for website. Populates html elements by formatting (with html) and appending such data.
+Stores website content (as JSONs). Dynamically populates site content
+by formatting HTML snippits from helper.js with JSON data.
 
 */
 
@@ -304,11 +305,10 @@ education.display();
 
 /*
 
-Add Map div
+Add map
 
 */
 
-// add map
 $("#mapDiv").append(googleMap);
 
 /*

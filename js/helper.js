@@ -1,6 +1,6 @@
 /*
 
-Helper HTML strings, to be used by resumeBuilder.js
+Helper HTML strings, to be used by resumeBuilder.js to dynamically populate page content
 
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
@@ -52,19 +52,6 @@ var HTMLonlineURL = '<a href="#">%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
-
-/*
-
-The International Name button challenge
-
-*/
-// $(document).ready(function() {
-//   $('button').click(function() {
-//     var iName = inName() || function(){};
-//     $('#name').html(iName);
-//   });
-// });
-
 /*
 
 Tracking click locations
@@ -86,17 +73,26 @@ $(document).click(function(loc) {
   logClicks(loc.pageX,loc.pageY);
 });
 
+/*
+
+The International Name button challenge
+
+*/
+// $(document).ready(function() {
+//   $('button').click(function() {
+//     var iName = inName() || function(){};
+//     $('#name').html(iName);
+//   });
+// });
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
+Generate custom Google map
 */
 var map;    // declares a global map variable
 
 
 /*
-Start here! initializeMap() is called when page is loaded.
+initializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
@@ -111,7 +107,6 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -171,7 +166,7 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
+    // open info window when marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
       infoWindow.open(map, marker);
     });
