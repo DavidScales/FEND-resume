@@ -1,9 +1,15 @@
-// EXAMPLE
-// replace name and role in header
-// var formattedName = HTMLheaderName.replace("%data%", name);
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
+/*
+
+Stores JSON data for website. Populates html elements by formatting (with html) and appending such data.
+
+*/
+
+
+/*
+
+BIO
+
+*/
 
 // create biography object using object literal notation (JSON)
 var bio = {
@@ -19,6 +25,52 @@ var bio = {
 	"welcomeMessage": "Welcome!",
 	"skills": ["HTML", "CSS", "JavaScript", "Git and GitHub", "C", "Python","Materials Science stuff"]
 };
+
+// add display bio function
+bio.display = function() {
+	// format and prepend role
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	// format and prepend name
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
+
+	// format and append mobile
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+	// format and append mobile
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+	// format and append mobile
+	var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGitHub);
+	// format and append mobile
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
+
+	// format and append bioPic
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedBioPic)
+	// format and append skills, if available
+	if (bio.skills.length > 0){
+		// append 'skills start'
+		$("#header").append(HTMLskillsStart);
+		// for each skill, format and append
+		for (skill in bio.skills) {
+			formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+			$("#skills").append(formattedSkill);
+		}
+	}
+
+}
+
+bio.display();
+
+/*
+
+WORK
+
+*/
 
 // create work object using object literal notation (JSON)
 var work = {
@@ -52,6 +104,38 @@ var work = {
 		]
 };
 
+// add display work function
+work.display = function displayWork(){
+	// Add jobs from work object
+	// for each job
+	for (job in work.jobs){
+		// append 'work start' element to #workExperience
+		$("#workExperience").append(HTMLworkStart);
+		// format 'employer' and 'title' for '.work-entry'
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		// append to .work-entry
+		$(".work-entry:last").append(formattedEmployer + formattedTitle);
+		// format 'location', 'dates', 'description' for '.work-entry'
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		// append to .work-entry
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedDescription);
+	}
+}
+
+// add work content
+work.display();
+
+/*
+
+PROJECTS
+
+*/
+
 // create projects object using object literal notation (JSON)
 var projects = {
 	"projects": [
@@ -72,7 +156,7 @@ var projects = {
 	]
 };
 
-// add display function to projects object
+// add project display function
 projects.display = function() {
 	// for each project in projects object
 	for (projectIndex in this.projects) {
@@ -92,10 +176,16 @@ projects.display = function() {
 			}
 		}
 	}
-};
+}
 
 // display projects
 projects.display();
+
+/*
+
+EDUCATION
+
+*/
 
 // create education object using object literal notation (JSON)
 var education = {
@@ -106,7 +196,7 @@ var education = {
 			"location": "Seattle, Washington",
 			"major": "Materials Science and Engineering",
 			"degree": "BS",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"name": "Olympic College",
@@ -114,7 +204,7 @@ var education = {
 			"location": "Bremerton, Washington",
 			"major": "General Studies",
 			"degree": "AA",
-			"url": ""
+			"url": "#"
 		}
 	],
 	"onlineCourses": [
@@ -122,118 +212,130 @@ var education = {
 			"title": "Intro to HTML and CSS",
 			"school": "Udacity",
 			"dates": "2015",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Responsive Web Design Fundamentals",
 			"school": "Udacity",
 			"dates": "2015",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Responsive Images",
 			"school": "Udacity",
 			"dates": "2016",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Version Control with Git and GitHub",
 			"school": "Udacity",
 			"dates": "2015",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Intro to CS and Programming Using Python",
 			"school": "MIT",
 			"dates": "2014",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Computation Structures 1: Digital Circuits",
 			"school": "MIT",
 			"dates": "2015",
-			"url": ""
+			"url": "#"
 		},
 		{
 			"title": "Introduction to Computer Science",
 			"school": "Harvard",
 			"dates": "2015",
-			"url": ""
+			"url": "#"
 		}
 
 	]
 };
 
-// Add name, role, and skills from bio object
-// Need to append <h1> in header to satisfy index.html if statements
-// format name and role for header
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-// prepend formatted name and role to header
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-// check if there are skills in the bio object
-if (bio.skills.length > 0){
-	// if there are, append 'skills start' element to header (includes #skills)
-	$("#header").append(HTMLskillsStart);
-	// for each skill, format skill, and append to #skills
-	for (skill in bio.skills) {
-		formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-		$("#skills").append(formattedSkill);
+// add education display function
+education.display = function() {
+	// for each school
+	for (schoolIndex in education.schools){
+		// append school start
+		$("#education").append(HTMLschoolStart);
+		// format name
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[schoolIndex].name);
+		formattedName = formattedName.replace("#", education.schools[schoolIndex].url);
+		// format degree
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schoolIndex].degree);
+		$(".education-entry:last").append(formattedName + formattedDegree);
+		// format and append dates
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[schoolIndex].dates);
+		$(".education-entry:last").append(formattedDates);
+		// format and append location
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schoolIndex].location);
+		$(".education-entry:last").append(formattedLocation);
+		// format and append major
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolIndex].major);
+		$(".education-entry:last").append(formattedMajor);
+	}
+	// append online course header
+	$("#education").append(HTMLonlineClasses);
+	// for each online course
+	for (onlineCourseIndex in education.onlineCourses){
+		// append online course start
+		$("#education").append(HTMLonlineCourseStart);
+		// format title
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourseIndex].title);
+		formattedTitle = formattedTitle.replace("#", education.onlineCourses[onlineCourseIndex].url);
+		// formate school
+		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourseIndex].school);
+		// append title and school
+		$(".online-course-entry:last").append(formattedTitle + formattedSchool);
+		// formate and append dates
+		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourseIndex].dates);
+		$(".online-course-entry:last").append(formattedDates);
 	}
 }
 
-// create a funtion to display work
-function displayWork(){
-	// Add jobs from work object
-	// for each job
-	for (job in work.jobs){
-		// append 'work start' element to #workExperience
-		$("#workExperience").append(HTMLworkStart);
-		// format 'employer' and 'title' for '.work-entry'
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		// append to .work-entry
-		$(".work-entry:last").append(formattedEmployer + formattedTitle);
-		// format 'location', 'dates', 'description' for '.work-entry'
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		// append to .work-entry
-		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formattedLocation);
-		$(".work-entry:last").append(formattedDescription);
-	}
-};
+// display education
+education.display();
 
-// add 'internationalize' button
-$("#main").append(internationalizeButton);
+/*
 
-// add work content
-displayWork();
+Add Map div
 
-// create a function to "internationalize" name
-function inName(){
-	namesArray = bio.name.split(" ");
-	namesArray[0] = namesArray[0][0].toUpperCase() + namesArray[0].slice(1).toLowerCase();
-	namesArray[1] = namesArray[1].toUpperCase();
-	return namesArray.join(" ");
-}
+*/
 
 // add map
 $("#mapDiv").append(googleMap);
 
-// testing stuff ///////////////////////////
-function locationizer(work_obj) {
-    locations = [];
-    for (jobIndex in work_obj.jobs){
-        locations.push(work_obj.jobs[jobIndex].location);
-    }
-    return locations;
-}
+/*
+
+Testing
+
+*/
+
+// function locationizer(work_obj) {
+//     locations = [];
+//     for (jobIndex in work_obj.jobs){
+//         locations.push(work_obj.jobs[jobIndex].location);
+//     }
+//     return locations;
+// }
 
 // console.log(locationizer(work));
 
-// console.log(inName("sebastian thrun"));
+/*
 
+ Just for funsies
+
+*/
+
+// // add 'internationalize' button
+// $("#main").append(internationalizeButton);
+
+// // create a function to "internationalize" name
+// function inName(){
+// 	namesArray = bio.name.split(" ");
+// 	namesArray[0] = namesArray[0][0].toUpperCase() + namesArray[0].slice(1).toLowerCase();
+// 	namesArray[1] = namesArray[1].toUpperCase();
+// 	return namesArray.join(" ");
+// }
