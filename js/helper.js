@@ -41,7 +41,7 @@ var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 // improvised
-var HTMLonlineCourseStart = '<div class="online-course-entry"></div>'
+var HTMLonlineCourseStart = '<div class="online-course-entry"></div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
@@ -57,7 +57,7 @@ var googleMap = '<div id="map"></div>';
 Tracking click locations
 
 */
-clickLocations = [];
+var clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
