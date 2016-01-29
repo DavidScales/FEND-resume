@@ -85,22 +85,14 @@ var work = {
 				"title": "Engineering Aide",
 				"location": "Bremerton, Washington",
 				"dates": "Summers 2010, 2011, 2012",
-				"description": "Assist with organization and standardization of the technical \
-				estimates of multiple shipyards for the Navy. Design and construct a Lean supply \
-				system to increase supplies accessibility and productivity. Create Lean systems to \
-				reduce personnel/equipment location time and improve safety. Interface with engineers \
-				and management to report findings. "
+				"description": "Assist with organization and standardization of the technical estimates of multiple shipyards for the Navy. Design and construct a Lean supply system to increase supplies accessibility and productivity. Create Lean systems to reduce personnel/equipment location time and improve safety. Interface with engineers and management to report findings. "
 			},
 			{
 				"employer": "NASA Glenn Research Center",
 				"title": "Undergraduate Research Intern",
 				"location": "Cleveland, Ohio",
 				"dates": "Summer 2014",
-				"description": "Study high temperature interactions between sand (CMAS) and \
-				next generation environmental barrier coating (EBC) materials for silicon-based \
-				ceramic-matrix composite (CMC) aircraft engine components. Characterize and evaluate \
-				material interactions with SEM, EDS, XRD, and optical microscopy. Work in a team \
-				environment and prepare monthly written and oral reports."
+				"description": "Study high temperature interactions between sand (CMAS) and next generation environmental barrier coating (EBC) materials for silicon-based ceramic-matrix composite (CMC) aircraft engine components. Characterize and evaluate material interactions with SEM, EDS, XRD, and optical microscopy. Work in a team environment and prepare monthly written and oral reports."
 			}
 		]
 };
