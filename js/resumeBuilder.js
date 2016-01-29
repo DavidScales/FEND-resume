@@ -185,7 +185,7 @@ var education = {
 	"schools": [
 		{
 			"name": "University of Washington",
-			"dates": "2010 - 2014",
+			"dates": 2014,
 			"location": "Seattle, Washington",
 			"major": "Materials Science and Engineering",
 			"degree": "BS",
@@ -193,7 +193,7 @@ var education = {
 		},
 		{
 			"name": "Olympic College",
-			"dates": "2008 - 2010",
+			"dates": 2010,
 			"location": "Bremerton, Washington",
 			"major": "General Studies",
 			"degree": "AA",
@@ -204,43 +204,43 @@ var education = {
 		{
 			"title": "Intro to HTML and CSS",
 			"school": "Udacity",
-			"dates": "2015",
+			"dates": 2015,
 			"url": "#"
 		},
 		{
 			"title": "Responsive Web Design Fundamentals",
 			"school": "Udacity",
-			"dates": "2015",
+			"dates": 2015,
 			"url": "#"
 		},
 		{
 			"title": "Responsive Images",
 			"school": "Udacity",
-			"dates": "2016",
+			"dates": 2016,
 			"url": "#"
 		},
 		{
 			"title": "Version Control with Git and GitHub",
 			"school": "Udacity",
-			"dates": "2015",
+			"dates": 2015,
 			"url": "#"
 		},
 		{
 			"title": "Intro to CS and Programming Using Python",
 			"school": "MIT",
-			"dates": "2014",
+			"dates": 2014,
 			"url": "#"
 		},
 		{
 			"title": "Computation Structures 1: Digital Circuits",
 			"school": "MIT",
-			"dates": "2015",
+			"dates": 2015,
 			"url": "#"
 		},
 		{
 			"title": "Introduction to Computer Science",
 			"school": "Harvard",
-			"dates": "2015",
+			"dates": 2015,
 			"url": "#"
 		}
 
