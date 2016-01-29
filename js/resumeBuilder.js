@@ -22,7 +22,7 @@ var bio = {
 		"github": "DavidScales",
 		"location": "San Francisco"
 	},
-	"bioPic": "images/veryhandsome.jpg",
+	"bioPic": "images/veryhandsome-500.jpg",
 	"welcomeMessage": "Welcome!",
 	"skills": ["HTML", "CSS", "JavaScript", "Git and GitHub", "C", "Python","Materials Science stuff"]
 };
