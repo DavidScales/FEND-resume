@@ -85,26 +85,22 @@ var work = {
 				"title": "Engineering Aide",
 				"location": "Bremerton, Washington",
 				"dates": "Summers 2010, 2011, 2012",
-				"description": "Assist engineers blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \ "
+				"description": "Assist with organization and standardization of the technical \
+				estimates of multiple shipyards for the Navy. Design and construct a Lean supply \
+				system to increase supplies accessibility and productivity. Create Lean systems to \
+				reduce personnel/equipment location time and improve safety. Interface with engineers \
+				and management to report findings. "
 			},
 			{
-				"employer": "NASA",
-				"title": "Astronaut",
+				"employer": "NASA Glenn Research Center",
+				"title": "Undergraduate Research Intern",
 				"location": "Cleveland, Ohio",
-				"dates": "2020",
-				"description": "Save the world blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \
-				blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah \ "
+				"dates": "Summer 2014",
+				"description": "Study high temperature interactions between sand (CMAS) and \
+				next generation environmental barrier coating (EBC) materials for silicon-based \
+				ceramic-matrix composite (CMC) aircraft engine components. Characterize and evaluate \
+				material interactions with SEM, EDS, XRD, and optical microscopy. Work in a team \
+				environment and prepare monthly written and oral reports."
 			}
 		]
 };
@@ -148,14 +144,14 @@ var projects = {
 			"title": "Portfolio",
 			"dates": "2016",
 			"description": "Personal portfolio site",
-			"images": ["http://placehold.it/350x250", "http://placekitten.com/350/300"],
+			"images": ["http://placehold.it/250x200"],
 			"url": "https://github.com/DavidScales/portfolio"
 		},
 		{
 			"title": "ALU",
 			"dates": "2015",
 			"description": "Simulated Arithmetic Logic Unit built from logic gates",
-			"images": ["http://placehold.it/350x150", "http://placekitten.com/350/150"],
+			"images": ["http://placehold.it/250x200"],
 			"url": "#"
 		}
 	]

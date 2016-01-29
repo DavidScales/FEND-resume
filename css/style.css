@@ -27,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #1199C3;
   line-height: 48px;
   display: inline;
 }
@@ -41,7 +41,6 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
   color: #000;
   line-height: 22px;
@@ -58,7 +57,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  padding:10px;
 
 }
 
@@ -100,17 +99,19 @@ a {
   line-height: 28px;
 }
 
+/* old color #f5ae23 */
+
 #skills-h3 {
-  color: #f5ae23;
+  color: #1199C3;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #1199C3;
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #1199C3;
 }
 
 .white-text {
@@ -136,7 +137,7 @@ a {
 .flex-box {
   display: -webkit-flex;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
@@ -188,7 +189,7 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 1500px;
+    width: 175px;
   }
   .welcome-message {
     display: none;
@@ -210,6 +211,9 @@ span {
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
-    display: block;
+    display: inline-block;
+  }
+  .flex-box {
+  flex-direction: row;
   }
 }
