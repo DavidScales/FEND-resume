@@ -75,8 +75,7 @@ WORK
 
 // create work object using object literal notation (JSON)
 var work = {
-	'jobs': [
-		{
+	'jobs': [{
 			'employer': 'Puget Sound Naval Shipyard',
 			'title': 'Engineering Aide',
 			'location': 'Bremerton, Washington',
@@ -124,8 +123,7 @@ PROJECTS
 
 // create projects object using object literal notation (JSON)
 var projects = {
-	'projects': [
-		{
+	'projects': [{
 			'title': 'Portfolio',
 			'dates': '2016',
 			'description': 'Personal portfolio site',
@@ -171,8 +169,7 @@ EDUCATION
 
 // create education object using object literal notation (JSON)
 var education = {
-	'schools': [
-		{
+	'schools': [{
 			'name': 'University of Washington',
 			'date': 2014,
 			'location': 'Seattle, Washington',
@@ -189,8 +186,7 @@ var education = {
 			'url': '#'
 		}
 	],
-	'onlineCourses': [
-		{
+	'onlineCourses': [{
 			'title': 'Intro to HTML and CSS',
 			'school': 'Udacity',
 			'date': 2015,
