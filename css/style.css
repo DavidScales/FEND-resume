@@ -19,10 +19,18 @@ h6 {
 }
 
 .education-entry,
-.online-course-entry,
 .work-entry,
-.project-entry {
-  padding: 0 5%;
+.project-entry,
+.online-course-entry {
+  background-color: #ddeef7;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 20px
+}
+
+.online-course-entry {
+  margin-top: 10px;
 }
 
 h1 {
@@ -61,7 +69,6 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -76,7 +83,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -88,7 +94,6 @@ p {
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
@@ -102,6 +107,23 @@ a {
 #skills-h3 {
   color: #1199C3;
   display: none;
+}
+
+.skill-item {
+  background-color: #1199C3;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.points {
+  list-style-type: disc;
+  margin-left: 25px;
+  font-size: 14px;
+}
+
+.point {
+  padding-bottom: 8px;
 }
 
 .blue {
@@ -172,7 +194,7 @@ span {
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
-    margin-top: 5%;
+    /*margin-top: 5%;*/
   }
 }
 
@@ -184,7 +206,7 @@ span {
 
 @media only screen and (max-width: 750px) {
   #lets-connect {
-    margin-top: 10%;
+    /*margin-top: 10%;*/
   }
   .biopic {
     width: 175px;
@@ -206,7 +228,7 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 450px) {
   #skills-h3,
   .biopic {
     display: inline-block;
