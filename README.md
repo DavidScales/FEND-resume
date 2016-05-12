@@ -107,7 +107,10 @@ This is in hide.Empty.js
 ```
 checks to see if there are work entries in the work section, and if not, the entire work section is hidden from the page.
 
-Learning how to populate web content with JavaScript is certainly valuable, and necessary for transitioning from static web pages into dynamic applications. That said, generating an entire site with JS can be a bit impractical, and as a result I have not improved the site as much as I could have.
+Learning how to populate web content with JavaScript is certainly valuable, and necessary for transitioning from static web pages into dynamic applications.
+
+### Note
+The site has been updated, and the above example code might not be identical to the actual code, however the principal functionality and concepts are the same.
 
 [jQuery]: <https://jquery.com/>
 
