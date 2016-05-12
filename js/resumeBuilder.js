@@ -85,6 +85,14 @@ WORK
 var work = {
 	'jobs': [
 		{
+			'employer': 'Udacity',
+			'url': 'https://www.udacity.com/',
+			'title': 'Front End Code Reviewer',
+			'location': 'Belmont, California',
+			'dates': 'May 2016 - present',
+			'points': ['Review student project submissions and provide actionable '+
+			           'and helpful feedback. ']
+		},{
 			'employer': 'Water Conservation Team',
 			'url': '#',
 			'title': 'Co-founder',
